@@ -1,0 +1,104 @@
+{
+  "title": "Fix modifiers in Parallels",
+  "rules": [
+    {
+      "description": "Change LEFT OPT to LEFT COMMAND(WIN) in Parallels",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_alt"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.parallels.*"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "left_gui"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change LEFT COMMAND to LEFT OPT(ALT) in Parallels",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_gui"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "description": "",
+              "bundle_identifiers": [
+                "com.parallels.*"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "left_alt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change RIGHT COMMAND to RIGHT OPT(ALT) in Parallels",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_gui"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.parallels.*"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "right_alt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Change RIGHT OPT to RIGHT CONTROL(CONTROL) in Parallels",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_alt"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "description": "com.parallels.*"
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "right_control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
